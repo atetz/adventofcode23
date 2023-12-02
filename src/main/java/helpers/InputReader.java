@@ -1,18 +1,20 @@
 package helpers;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
 public class InputReader {
-
     public static String INPUT_PATH = "src/main/java/input/";
+    public String filePath;
+    public List<String> fileLines;
 
-    public static List<String> getLines(String fileName) throws Exception{
-        String filePath = String.format("%s%s",INPUT_PATH,fileName);
-        return Files.readAllLines(Path.of(filePath));
+    public InputReader(String fileName) throws Exception {
+        this.filePath = String.format("%s%s", INPUT_PATH, fileName);
+        this.fileLines = Files.readAllLines(Path.of(filePath));
     }
 
-    public static void main(String[] args) throws Exception {
-
+    public List<String> getLines() {
+        return fileLines;
     }
 }
