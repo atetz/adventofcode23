@@ -1,3 +1,4 @@
+import day1.Day1;
 import helpers.InputReader;
 import org.junit.jupiter.api.Test;
 

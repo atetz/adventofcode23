@@ -1,3 +1,5 @@
+package day1;
+
 import helpers.InputReader;
 
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.regex.Pattern;
 public class Day1 {
     public static String INPUT_FILE = "01.txt";
 
-    public static List<String> getPuzzleInput() throws Exception {
+    public static List<String> getPuzzleInput() {
         InputReader input = new InputReader(INPUT_FILE);
         return input.getLines();
     }
@@ -32,7 +34,7 @@ public class Day1 {
         return line;
     }
 
-    public static Integer puzzleOne(List<String> calibrationValues) throws Exception {
+    public static Integer puzzleOne(List<String> calibrationValues) {
 
         return calibrationValues.stream()
                 .map(s -> s.replaceAll("\\D", ""))
@@ -41,7 +43,7 @@ public class Day1 {
                 .reduce(0, Integer::sum);
     }
 
-    public static Integer puzzleTwo(List<String> calibrationValues) throws Exception {
+    public static Integer puzzleTwo(List<String> calibrationValues) {
 
         return calibrationValues.stream()
                 .map(Day1::substituteWrittenNumbers)
@@ -51,7 +53,7 @@ public class Day1 {
                 .reduce(0, Integer::sum);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         List<String> calibrationValues = getPuzzleInput();
 
