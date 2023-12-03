@@ -1,4 +1,4 @@
-package helpers;
+package utils;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class InputReader {
-    public static String INPUT_PATH = "src/main/java/input/";
+    public static String INPUT_PATH = "src/main/resources/input/";
     public String filePath;
     public List<String> fileLines;
 

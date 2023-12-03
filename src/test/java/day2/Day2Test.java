@@ -1,7 +1,7 @@
 package day2;
 
-import helpers.InputReader;
 import org.junit.jupiter.api.Test;
+import utils.InputReader;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ class Day2Test {
     @Test
     void validateBlueDraws() {
         assertTrue(validateDraw("12blue"));
-        assertFalse(validateDraw("14blue"));
+        assertFalse(validateDraw("15blue"));
         assertTrue(validateDraw("2blue"));
     }
 

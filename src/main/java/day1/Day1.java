@@ -1,6 +1,6 @@
 package day1;
 
-import helpers.InputReader;
+import utils.InputReader;
 
 import java.util.List;
 import java.util.Map;

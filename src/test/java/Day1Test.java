@@ -1,6 +1,6 @@
 import day1.Day1;
-import helpers.InputReader;
 import org.junit.jupiter.api.Test;
+import utils.InputReader;
 
 import java.util.List;
 

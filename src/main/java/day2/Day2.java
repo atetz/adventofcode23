@@ -1,6 +1,6 @@
 package day2;
 
-import helpers.InputReader;
+import utils.InputReader;
 
 import java.util.Arrays;
 import java.util.List;
@@ -36,10 +36,27 @@ public class Day2 {
             String[] allDraws = gameLine.split("[;,]");
             if (Arrays.stream(allDraws).allMatch(Day2::validateDraw)) {
                 sumOfGameIDs = sumOfGameIDs + gameID;
-                System.out.println(gameID);
             }
         }
         return sumOfGameIDs;
+    }
+
+    public static Integer puzzleTwo(List<String> puzzleInput) {
+
+
+        for (String gameLine : puzzleInput) {
+            int gameID = parseInt(gameLine.replaceAll("(Game\\s|:.+$)", ""));
+            gameLine = gameLine.replaceAll("(Game\\s\\d+:|\\s)", "");
+            String[] allDraws = gameLine.split("[;,]");
+
+
+            for (String allDraw : allDraws) {
+                System.out.println(gameID + allDraw);
+
+            }
+
+        }
+        return 1;
     }
 
     public static void main(String[] args) {
@@ -47,7 +64,7 @@ public class Day2 {
 
 
         System.out.println("Part one: " + puzzleOne(puzzleInput));
-//        System.out.println("Part two: " + puzzleTwo(puzzleInput));
+        System.out.println("Part two: " + puzzleTwo(puzzleInput));
 
 
     }
