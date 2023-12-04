@@ -1,4 +1,5 @@
-import day1.Day1;
+package day1;
+
 import org.junit.jupiter.api.Test;
 import utils.InputReader;
 

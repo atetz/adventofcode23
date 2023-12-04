@@ -10,6 +10,7 @@ import java.util.Objects;
 import static java.lang.Integer.parseInt;
 
 public class Day2 {
+
     public static String INPUT_FILE = "02.txt";
 
     public static List<String> getPuzzleInput() {
