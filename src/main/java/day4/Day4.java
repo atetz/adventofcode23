@@ -86,9 +86,7 @@ public class Day4 {
     public static void main(String[] args) {
 
         List<String> puzzleInput = getPuzzleInput();
-
-        puzzleTwo(puzzleInput);
-
+        
         System.out.println("Part one: " + puzzleOne(puzzleInput));
         System.out.println("Part two: " + puzzleTwo(puzzleInput));
 
