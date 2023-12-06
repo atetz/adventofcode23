@@ -79,13 +79,12 @@ public class Day5 {
         long startTime = System.nanoTime();
 
         List<String> lines = getPuzzleInput(INPUT_FILE);
-        
+
         long[] seeds = extractSeeds(lines.get(0));
         List<CategoryMap> categoryMaps = parseCategoryMaps(lines.subList(1, lines.size()));
 
         long lowestLocation = stream(seeds).map(s -> getSeedLocation(s, categoryMaps)).min().getAsLong();
-        long lowestRangeLocation = findLowestLocation(categoryMaps, seeds) - 1; //this is weird but outputs
-
+        long lowestRangeLocation = findLowestLocation(categoryMaps, seeds);
         System.out.println("result1: " + lowestLocation);
         System.out.println("result2: " + lowestRangeLocation);
 
