@@ -10,7 +10,6 @@ import static java.util.Arrays.stream;
 public class Day5 {
 
     public static String INPUT_FILE = "05.txt";
-    public static String SAMPLE_FILE = "05_sample1.txt";
 
     public static List<String> getPuzzleInput(String file) {
         InputReader input = new InputReader(file);
@@ -79,14 +78,13 @@ public class Day5 {
 
         long startTime = System.nanoTime();
 
-//        List<String> lines = getPuzzleInput(INPUT_FILE);
-        List<String> lines = getPuzzleInput(SAMPLE_FILE);
-
+        List<String> lines = getPuzzleInput(INPUT_FILE);
+        
         long[] seeds = extractSeeds(lines.get(0));
         List<CategoryMap> categoryMaps = parseCategoryMaps(lines.subList(1, lines.size()));
 
         long lowestLocation = stream(seeds).map(s -> getSeedLocation(s, categoryMaps)).min().getAsLong();
-        long lowestRangeLocation = findLowestLocation(categoryMaps, seeds) - 1;
+        long lowestRangeLocation = findLowestLocation(categoryMaps, seeds) - 1; //this is weird but outputs
 
         System.out.println("result1: " + lowestLocation);
         System.out.println("result2: " + lowestRangeLocation);
