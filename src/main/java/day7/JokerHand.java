@@ -61,7 +61,6 @@ public class JokerHand implements Comparable<JokerHand> {
             if (entry.getKey() == 'J') {
                 continue;
             }
-
             if (duplicates == 5) {
                 currentStrength = strengthMap.get("5_OF_KIND");
 
