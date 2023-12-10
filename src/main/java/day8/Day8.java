@@ -7,9 +7,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+
 public class Day8 {
 
-    public static String SAMPLE_FILE = "08_sample2.txt";
+    public static String SAMPLE_FILE = "08_sample3.txt";
     public static String INPUT_FILE = "08.txt";
 
     public static int partOne(Map<String, String[]> routeNetwork, List<Integer> instructions) {
@@ -26,6 +27,28 @@ public class Day8 {
                 String nextLocation = routeNetwork.get(currentLocation)[j];
                 steps++;
                 currentLocation = nextLocation;
+            }
+        }
+        return steps;
+    }
+
+
+    public static int partTwo(String startLocation, Map<String, String[]> routeNetwork, List<Integer> instructions) {
+        int steps = 0;
+        String currentLocation = null;
+
+        boolean working = true;
+        while (working) {
+            if (currentLocation == null) {
+                currentLocation = startLocation;
+            }
+            for (int j : instructions) {
+                String nextLocation = routeNetwork.get(currentLocation)[j];
+                steps++;
+                currentLocation = nextLocation;
+                if (nextLocation.endsWith("Z")) {
+                    working = false;
+                }
             }
         }
         return steps;
@@ -60,6 +83,14 @@ public class Day8 {
         }
         System.out.println("Part one: " + partOne(routeNetwork, instructionsLookup));
 
+        List<String> startingLocations = routeNetwork.keySet().stream().filter(k -> k.endsWith("A")).toList();
+        List<Integer> finalInstructionsLookup = instructionsLookup;
+
+        long[] stepsPerStartingLocation = startingLocations
+                .stream()
+                .mapToLong(sp -> partTwo(sp, routeNetwork, finalInstructionsLookup)).toArray();
+
+        System.out.println("Part two: " + LCMCalculator.calculateLCM(stepsPerStartingLocation));
 
     }
 }
