@@ -32,7 +32,6 @@ public class Day8 {
         return steps;
     }
 
-
     public static int partTwo(String startLocation, Map<String, String[]> routeNetwork, List<Integer> instructions) {
         int steps = 0;
         String currentLocation = null;

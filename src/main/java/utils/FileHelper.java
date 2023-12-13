@@ -3,6 +3,7 @@ package utils;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.List;
 
 public class FileHelper {
@@ -17,5 +18,14 @@ public class FileHelper {
             System.out.println(e.getMessage());
             return List.of();
         }
+    }
+
+    public static List<int[]> readLinesAsListOfIntArray(String fileName, String delimiter) {
+        return readLines(fileName).stream()
+                .map(line -> Arrays.stream(line.split(delimiter))
+                        .mapToInt(Integer::parseInt)
+                        .toArray())
+                .toList();
+
     }
 }
