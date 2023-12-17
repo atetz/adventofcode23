@@ -56,6 +56,7 @@ public class JokerHand implements Comparable<JokerHand> {
         Map<Character, Integer> duplicateCards = createCardDuplicateMap();
 
         int currentStrength = strengthMap.get("HIGH_CARD");
+
         for (Map.Entry<Character, Integer> entry : duplicateCards.entrySet()) {
             int duplicates = entry.getValue();
             if (entry.getKey() == 'J') {

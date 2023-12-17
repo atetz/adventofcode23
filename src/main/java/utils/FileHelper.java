@@ -28,4 +28,9 @@ public class FileHelper {
                 .toList();
 
     }
+
+    public static String[][] readLinesAs2DArray(String fileName) {
+        return readLines(fileName).stream().map(s -> s.split(""))
+                .toArray(String[][]::new);
+    }
 }
